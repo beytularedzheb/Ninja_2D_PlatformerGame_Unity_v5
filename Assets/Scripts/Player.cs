@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Character
 {
     private static Player instance;
 
@@ -17,22 +17,12 @@ public class Player : MonoBehaviour
     private LayerMask whatIsGround;
 
     [SerializeField]
-    private float movementSpeed;
-
-    [SerializeField]
     private bool airControl;
 
-    [SerializeField]
-    private GameObject knifePrefab;
-
-    [SerializeField]
-    private Transform knifePosition;
-
-    private bool facingRight;
-    private Animator animator;
+    private Vector2 startPosition;
 
     public Rigidbody2D Rigidbody { get; set; }
-    public bool Attack { get; set; }
+    
     public bool Slide { get; set; }
     public bool Jump { get; set; }
     public bool OnGround { get; set; }
@@ -49,15 +39,20 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Start()
+    public override void Start()
     {
-        facingRight = true;
+        base.Start();
+        startPosition = transform.position;
         Rigidbody = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
     }
-	
+
     void Update()
     {
+        if (transform.position.y <= -14f)
+        {
+            Rigidbody.velocity = Vector2.zero;
+            transform.position = startPosition;
+        }
         HandleInput();
     }
 
@@ -73,7 +68,7 @@ public class Player : MonoBehaviour
     {
         if (Rigidbody.velocity.y < 0)
         {
-            animator.SetBool("land", true);
+            CharacterAnimator.SetBool("land", true);
         }
         if (!Attack && !Slide && (OnGround || airControl))
         {
@@ -84,7 +79,7 @@ public class Player : MonoBehaviour
             Rigidbody.AddForce(new Vector2(0, jumpForce));
         }
 
-        animator.SetFloat("speed", Mathf.Abs(movementAxises.x));
+        CharacterAnimator.SetFloat("speed", Mathf.Abs(movementAxises.x));
         if (!Slide && !Attack)
         {
             Flip(movementAxises);
@@ -96,11 +91,7 @@ public class Player : MonoBehaviour
         if ((movementAxises.x > 0 && !facingRight) || 
             (movementAxises.x < 0 && facingRight))
         {
-            facingRight = !facingRight;
-            Vector3 localScale = transform.localScale;
-            /* flip the player */
-            localScale.x *= -1; 
-            this.transform.localScale = localScale;
+            ChangeDirection();
         }
     }
 
@@ -109,22 +100,22 @@ public class Player : MonoBehaviour
         // jump
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            animator.SetTrigger("jump");
+            CharacterAnimator.SetTrigger("jump");
         }
         // melee attack
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            animator.SetTrigger("attack");
+            CharacterAnimator.SetTrigger("attack");
         }
         // slide
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            animator.SetTrigger("slide");
+            CharacterAnimator.SetTrigger("slide");
         }
         // throw knife
         if (Input.GetKeyDown(KeyCode.X))
         {
-            animator.SetTrigger("throw");
+            CharacterAnimator.SetTrigger("throw");
         }
     }
 
@@ -139,7 +130,10 @@ public class Player : MonoBehaviour
 
                 for (int i = 0; i < colliders.Length; i++)
                 {
-                    if (colliders[i].gameObject != gameObject)
+                    // consider about Sight and Enemy !!!!!!!!!!!!!!!!!
+                    if (!colliders[i].gameObject.name.Equals("Sight") && 
+                        !colliders[i].gameObject.tag.Equals("Enemy") && 
+                        colliders[i].gameObject != gameObject)
                     {
                         return true;
                     }
@@ -154,29 +148,20 @@ public class Player : MonoBehaviour
     {
         if (!OnGround)
         {
-            animator.SetLayerWeight(1, 1);
+            CharacterAnimator.SetLayerWeight(1, 1);
         }
         else
         {
-            animator.SetLayerWeight(1, 0);
+            CharacterAnimator.SetLayerWeight(1, 0);
         }
     }
 
-    public void ThrowKnife(int inTheAir)
+    public override void ThrowKnife(int inTheAir)
     {
         // inTheAir is integer because animation events do not work with boolean parameters
         if (!OnGround && inTheAir == 1 || OnGround && inTheAir == 0)
         {
-            if (facingRight)
-            {
-                GameObject tmp = (GameObject)Instantiate(knifePrefab, knifePosition.position, Quaternion.Euler(new Vector3(0, 0, -90)));
-                tmp.GetComponent<Knife>().Initialize(Vector2.right);
-            }
-            else
-            {
-                GameObject tmp = (GameObject)Instantiate(knifePrefab, knifePosition.position, Quaternion.Euler(new Vector3(0, 0, 90)));
-                tmp.GetComponent<Knife>().Initialize(Vector2.left);
-            }
+            base.ThrowKnife(inTheAir);
         }
     }
 }

@@ -10,12 +10,12 @@ public class Knife : MonoBehaviour
 
     private Vector2 direction;
 
-	void Start ()
+	void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
     }
 	
-	void FixedUpdate ()
+	void FixedUpdate()
     {
         rigidbody2d.velocity = direction * speed;
     }
