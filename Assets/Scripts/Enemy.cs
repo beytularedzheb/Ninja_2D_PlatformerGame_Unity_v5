@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 
 public class Enemy : Character
 {
@@ -35,17 +37,33 @@ public class Enemy : Character
         }
     }
 
+    public override bool IsDead
+    {
+        get
+        {
+            return health <= 0;
+        }
+    }
+
     public override void Start()
     {
         base.Start();
 
+        Player.Instance.Dead += new DeadEventHandler(RemoveTarget);
         ChangeState(new IdleState());
 	}
 
     void Update()
     {
-        currentState.Execute();
-        LookAtTarget();
+        if (!IsDead)
+        {
+            if (!TakingDamage)
+            {
+                currentState.Execute();
+            }
+
+            LookAtTarget();
+        }
     }
 
     public void ChangeState(IEnemyState newState)
@@ -89,8 +107,37 @@ public class Enemy : Character
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    public void RemoveTarget()
     {
+        Target = null;
+        ChangeState(new PatrolState());
+    }
+
+    public override void OnTriggerEnter2D(Collider2D other)
+    {
+        base.OnTriggerEnter2D(other);
         currentState.OnTriggerEnter(other);
+    }
+
+    public override IEnumerator TakeDamage()
+    {
+        // change 10 to variable which value is according to the weapon (knife or sword)
+        health -= 10;
+
+        if (!IsDead)
+        {
+            CharacterAnimator.SetTrigger("damage");
+        }
+        else
+        {
+            CharacterAnimator.SetTrigger("die");
+        }
+
+        yield return null;
+    }
+
+    public override void Death()
+    {
+        Destroy(gameObject);
     }
 }

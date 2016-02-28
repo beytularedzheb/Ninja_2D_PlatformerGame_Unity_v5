@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
@@ -11,10 +13,23 @@ public abstract class Character : MonoBehaviour
     [SerializeField]
     protected float movementSpeed;
 
+    [SerializeField]
+    protected int health;
+
+    [SerializeField]
+    private Collider2D SwordCollider;
+
+    [SerializeField]
+    private List<string> damageSources;
+
     private Animator animator;
     protected bool facingRight;
 
     public bool Attack { get; set; }
+
+    public bool TakingDamage { get; set; }
+
+    public abstract bool IsDead { get; }
 
     public Animator CharacterAnimator
     {
@@ -28,6 +43,9 @@ public abstract class Character : MonoBehaviour
             animator = value;
         }
     }
+
+    public abstract IEnumerator TakeDamage();
+    public abstract void Death();
 
     // Use this for initialization
     public virtual void Start()
@@ -64,4 +82,18 @@ public abstract class Character : MonoBehaviour
         }
     }
 
+
+    public virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        if (damageSources.Contains(other.tag))
+        {
+            // see more about coroutines: http://docs.unity3d.com/Manual/Coroutines.html
+            StartCoroutine(TakeDamage());
+        }
+    }
+
+    public void MeleeAttack()
+    {
+        SwordCollider.enabled = !SwordCollider.enabled;
+    }
 }

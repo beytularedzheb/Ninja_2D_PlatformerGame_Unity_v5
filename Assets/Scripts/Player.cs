@@ -1,7 +1,15 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
+
+/* to inform the enemy that the player is dead and there 
+   is no need attacking him anymore */
+public delegate void DeadEventHandler();
 
 public class Player : Character
 {
+    public event DeadEventHandler Dead;
+
     private static Player instance;
 
     [SerializeField]
@@ -19,7 +27,14 @@ public class Player : Character
     [SerializeField]
     private bool airControl;
 
+    [SerializeField]
+    private float immortalTime;
+
+    private SpriteRenderer spriteRenderer;
+
+    private bool immortal = false;
     private Vector2 startPosition;
+
 
     public Rigidbody2D Rigidbody { get; set; }
     
@@ -39,29 +54,59 @@ public class Player : Character
         }
     }
 
+    public override bool IsDead
+    {
+        get
+        {
+            if (health <= 0)
+            {
+                OnDead();
+            }
+            
+            return health <= 0;
+        }
+    }
+
     public override void Start()
     {
         base.Start();
+
         startPosition = transform.position;
+        spriteRenderer = GetComponent<SpriteRenderer>();
         Rigidbody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        if (transform.position.y <= -14f)
+        if (!TakingDamage && !IsDead)
         {
-            Rigidbody.velocity = Vector2.zero;
-            transform.position = startPosition;
+            if (transform.position.y <= -14f)
+            {
+                Death();
+            }
+            HandleInput();
         }
-        HandleInput();
     }
 
 	void FixedUpdate()
     {
-        Vector2 movementInputVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        OnGround = IsGrounded();
-        HandleLayers();
-        HandleMovement(movementInputVector);
+        if (!TakingDamage && !IsDead)
+        {
+            Vector2 movementInputVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            OnGround = IsGrounded();
+            HandleLayers();
+            HandleMovement(movementInputVector);
+        }
+    }
+
+    public void OnDead()
+    {
+        // if there is any instance
+        if (Dead != null)
+        {
+            // then execute it
+            Dead();
+        }
     }
 
     private void HandleMovement(Vector2 movementAxises)
@@ -163,5 +208,53 @@ public class Player : Character
         {
             base.ThrowKnife(inTheAir);
         }
+    }
+
+    private IEnumerator IndicateImmortal()
+    {
+        while (immortal)
+        {
+            spriteRenderer.enabled = false;
+            yield return new WaitForSeconds(0.1f);
+            spriteRenderer.enabled = true;
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    public override IEnumerator TakeDamage()
+    {
+        if (!immortal)
+        {
+            // change 10 to variable which value is according to the weapon (knife or sword)
+            health -= 10;
+
+            if (!IsDead)
+            {
+                CharacterAnimator.SetTrigger("damage");
+                immortal = true;
+                StartCoroutine(IndicateImmortal());
+                yield return new WaitForSeconds(immortalTime);
+                immortal = false;
+            }
+            else
+            {
+                Rigidbody.velocity = Vector2.zero;
+                CharacterAnimator.SetLayerWeight(1, 0);
+                CharacterAnimator.SetTrigger("die");
+            }
+        }
+    }
+
+    public override void OnTriggerEnter2D(Collider2D other)
+    {
+        base.OnTriggerEnter2D(other);  
+    }
+
+    public override void Death()
+    {
+        Rigidbody.velocity = Vector2.zero;
+        CharacterAnimator.SetTrigger("idle");
+        health = 30; // make a variable
+        transform.position = startPosition;
     }
 }

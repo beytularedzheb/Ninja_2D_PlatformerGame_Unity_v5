@@ -63,7 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DeathBehaviour.cs" />
     <Compile Include="Assets\Scripts\AnimationBehaviours\AttackBehaviour.cs" />
+    <Compile Include="Assets\Scripts\AnimationBehaviours\DamageBehaviour.cs" />
     <Compile Include="Assets\Scripts\AnimationBehaviours\JumpBehaviour.cs" />
     <Compile Include="Assets\Scripts\AnimationBehaviours\LandBehaviour.cs" />
     <Compile Include="Assets\Scripts\AnimationBehaviours\SlideBehaviour.cs" />

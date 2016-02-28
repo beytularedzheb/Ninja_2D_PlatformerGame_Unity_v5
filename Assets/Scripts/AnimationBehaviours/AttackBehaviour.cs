@@ -12,8 +12,12 @@ public class AttackBehaviour : StateMachineBehaviour
         {
             if (Player.Instance.OnGround)
             {
-                Player.Instance.Rigidbody.velocity = Vector2.zero;
+                animator.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             }
+        }
+        else
+        {
+            animator.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }
 
@@ -26,6 +30,12 @@ public class AttackBehaviour : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.GetComponent<Character>().Attack = false;
+
+        // to disable the sword collider
+        if (stateInfo.IsTag("MeleeAttack"))
+        {
+            animator.GetComponent<Character>().MeleeAttack();
+        }
         animator.ResetTrigger("attack");
         animator.ResetTrigger("throw");
     }
