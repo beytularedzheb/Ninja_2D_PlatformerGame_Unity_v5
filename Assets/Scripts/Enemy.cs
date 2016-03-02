@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Enemy : Character
@@ -10,6 +9,13 @@ public class Enemy : Character
     [SerializeField]
     private float throwRange;
 
+    [SerializeField]
+    private Transform leftEdge;
+
+    [SerializeField]
+    private Transform rightEdge;
+
+    private Vector2 startPosition;
     private IEnemyState currentState;
     public GameObject Target { get; set; }
 
@@ -51,7 +57,9 @@ public class Enemy : Character
 
         Player.Instance.Dead += new DeadEventHandler(RemoveTarget);
         ChangeState(new IdleState());
-	}
+
+        startPosition = transform.position;
+    }
 
     void Update()
     {
@@ -81,11 +89,20 @@ public class Enemy : Character
     {
         if (!Attack)
         {
-            CharacterAnimator.SetFloat("speed", 1);
+            // to fix falling down of enemy from platform
+            if ((GetDirection().x > 0 && transform.position.x < rightEdge.position.x) ||
+                (GetDirection().x < 0 && transform.position.x > leftEdge.position.x))
+            {
+                CharacterAnimator.SetFloat("speed", 1);
 
-            /* multiply by Time.deltaTime because we want enemy to move
-               with the same speed on different devices (it depends on the FPS rate) */
-            transform.Translate(GetDirection() * (movementSpeed * Time.deltaTime));
+                /* multiply by Time.deltaTime because we want enemy to move
+                   with the same speed on different devices (it depends on the FPS rate) */
+                transform.Translate(GetDirection() * (movementSpeed * Time.deltaTime));
+            }
+            else if (currentState is PatrolState)
+            {
+                ChangeDirection();
+            }
         }
     }
 
@@ -137,7 +154,13 @@ public class Enemy : Character
     }
 
     public override void Death()
-    {
+    {   /*// "Revival"
+        CharacterAnimator.SetTrigger("idle");
+        CharacterAnimator.ResetTrigger("die");
+        health = 30; // variable
+        transform.position = startPosition;*/
+
+        // disappears
         Destroy(gameObject);
     }
 }

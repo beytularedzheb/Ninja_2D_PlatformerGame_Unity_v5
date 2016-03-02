@@ -4,10 +4,11 @@ public class PatrolState : IEnemyState
 {
     private Enemy enemy;
     private float patrolTimer;
-    private float patrolDuration = 10f; // in seconds
+    private float patrolDuration;
 
     public void Enter(Enemy enemy)
     {
+        patrolDuration = UnityEngine.Random.Range(1, 12);
         this.enemy = enemy;
     }
 
@@ -30,9 +31,9 @@ public class PatrolState : IEnemyState
 
     public void OnTriggerEnter(Collider2D other)
     {
-        if (other.tag.Equals("Edge"))
+        if (other.tag.Equals("Knife"))
         {
-            enemy.ChangeDirection();
+            enemy.Target = Player.Instance.gameObject;
         }
     }
 

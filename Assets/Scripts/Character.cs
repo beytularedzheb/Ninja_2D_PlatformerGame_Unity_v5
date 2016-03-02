@@ -17,11 +17,10 @@ public abstract class Character : MonoBehaviour
     protected int health;
 
     [SerializeField]
-    private Collider2D SwordCollider;
-
-    [SerializeField]
     private List<string> damageSources;
 
+    [SerializeField]
+    private Collider2D swordCollider;
     private Animator animator;
     protected bool facingRight;
 
@@ -44,12 +43,21 @@ public abstract class Character : MonoBehaviour
         }
     }
 
+    public Collider2D SwordCollider
+    {
+        get
+        {
+            return swordCollider;
+        }
+    }
+
     public abstract IEnumerator TakeDamage();
     public abstract void Death();
 
     // Use this for initialization
     public virtual void Start()
     {
+        SwordCollider.enabled = false;
         facingRight = true;
         CharacterAnimator = GetComponent<Animator>();
     }

@@ -4,11 +4,12 @@ public class MeleeState : IEnemyState
 {
     private Enemy enemy;
     private float attackTimer;
-    private float attackCoolDown = 3f; // in seconds
+    private float attackCoolDown;
     private bool canAttack = true;
     
     public void Enter(Enemy enemy)
     {
+        attackCoolDown = UnityEngine.Random.Range(1, 4);
         this.enemy = enemy;
     }
 

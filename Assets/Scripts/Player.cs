@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 /* to inform the enemy that the player is dead and there 
@@ -156,6 +155,13 @@ public class Player : Character
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             CharacterAnimator.SetTrigger("slide");
+        }
+        else
+        {
+            /* this fixes the issue when the player is not moving and 
+            is pressed sliding button, immediatly after that is pressed 
+            button for moving (horizontally) - it looks kind of weird */
+            CharacterAnimator.ResetTrigger("slide");
         }
         // throw knife
         if (Input.GetKeyDown(KeyCode.X))
