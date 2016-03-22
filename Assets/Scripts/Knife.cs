@@ -6,23 +6,18 @@ public class Knife : MonoBehaviour
     [SerializeField]
     private float speed;
 
-    private Rigidbody2D rigidbody2d;
+    private Rigidbody2D rigidBody;
 
-    private Vector2 direction;
+    public Vector2 Direction { get; set; }
 
-	void Start()
+    void Start()
     {
-        rigidbody2d = GetComponent<Rigidbody2D>();
+        rigidBody = GetComponent<Rigidbody2D>();
     }
 	
 	void FixedUpdate()
     {
-        rigidbody2d.velocity = direction * speed;
-    }
-
-    public void Initialize(Vector2 direction)
-    {
-        this.direction = direction;
+        rigidBody.velocity = Direction * speed;
     }
 
     void OnBecameInvisible()
