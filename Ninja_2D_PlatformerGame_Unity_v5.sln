@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ninja_2D_PlatformerGame_Unity_v5.CSharp", "Ninja_2D_PlatformerGame_Unity_v5.CSharp.csproj", "{C377BF31-CB9F-577D-1115-02BBF14250BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ninja_2D_PlatformerGame_Unity_v5", "Ninja_2D_PlatformerGame_Unity_v5.csproj", "{C377BF31-CB9F-577D-1115-02BBF14250BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
