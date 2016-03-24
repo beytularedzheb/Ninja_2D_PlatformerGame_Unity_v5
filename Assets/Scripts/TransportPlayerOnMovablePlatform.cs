@@ -37,9 +37,4 @@ public class TransportPlayerOnMovablePlatform : MonoBehaviour
             }
         }
     }
-
-    void OnBecameInvisible()
-    {
-        Destroy(gameObject);
-    }
 }

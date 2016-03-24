@@ -5,15 +5,15 @@ public class Collect : MonoBehaviour
     public int points;
     public bool destroyParent;
     [SerializeField]
-    AudioClip ac;
+    private AudioClip audioClip;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (ac != null)
+            if (audioClip != null)
             {
-                AudioSource.PlayClipAtPoint(ac, transform.position, 0.5f);
+                AudioSource.PlayClipAtPoint(audioClip, transform.position, 0.5f);
             }
             if (destroyParent && transform.parent != null)
             {
