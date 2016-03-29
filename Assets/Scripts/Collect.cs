@@ -3,7 +3,7 @@
 public class Collect : MonoBehaviour
 {
     public int points;
-    public bool destroyParent;
+    public bool destructive;
     [SerializeField]
     private AudioClip audioClip;
 
@@ -15,13 +15,13 @@ public class Collect : MonoBehaviour
             {
                 AudioSource.PlayClipAtPoint(audioClip, transform.position, 0.5f);
             }
-            if (destroyParent && transform.parent != null)
+            if (destructive)
             {
-                Destroy(transform.parent.gameObject);
+                Destroy(gameObject);
             }
             else
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }       
     }

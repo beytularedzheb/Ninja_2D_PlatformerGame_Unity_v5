@@ -68,9 +68,6 @@ public class Ladder : MonoBehaviour
             player.rigidBody.gravityScale = gravityScale;
             player.anim.enabled = true;
             player.anim.SetBool("climb", false);
-
-            // Player has jumped from the ladder
-            player.anim.SetTrigger("jump");
         }
     }
 }

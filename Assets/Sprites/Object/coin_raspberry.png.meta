@@ -1,0 +1,1356 @@
+fileFormatVersion: 2
+guid: 5ff1f68a0a1b2274482c31b379a5dacc
+timeCreated: 1459018480
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: coin_raspberry_0
+    21300002: coin_raspberry_1
+    21300004: coin_raspberry_2
+    21300006: coin_raspberry_3
+    21300008: coin_raspberry_4
+    21300010: coin_raspberry_5
+    21300012: coin_raspberry_6
+    21300014: coin_raspberry_7
+    21300016: coin_raspberry_8
+    21300018: coin_raspberry_9
+    21300020: coin_raspberry_10
+    21300022: coin_raspberry_11
+    21300024: coin_raspberry_12
+    21300026: coin_raspberry_13
+    21300028: coin_raspberry_14
+    21300030: coin_raspberry_15
+    21300032: coin_raspberry_16
+    21300034: coin_raspberry_17
+    21300036: coin_raspberry_18
+    21300038: coin_raspberry_19
+    21300040: coin_raspberry_20
+    21300042: coin_raspberry_21
+    21300044: coin_raspberry_22
+    21300046: coin_raspberry_23
+    21300048: coin_raspberry_24
+    21300050: coin_raspberry_25
+    21300052: coin_raspberry_26
+    21300054: coin_raspberry_27
+    21300056: coin_raspberry_28
+    21300058: coin_raspberry_29
+    21300060: coin_raspberry_30
+    21300062: coin_raspberry_31
+    21300064: coin_raspberry_32
+    21300066: coin_raspberry_33
+    21300068: coin_raspberry_34
+    21300070: coin_raspberry_35
+    21300072: coin_raspberry_36
+    21300074: coin_raspberry_37
+    21300076: coin_raspberry_38
+    21300078: coin_raspberry_39
+    21300080: coin_raspberry_40
+    21300082: coin_raspberry_41
+    21300084: coin_raspberry_42
+    21300086: coin_raspberry_43
+    21300088: coin_raspberry_44
+    21300090: coin_raspberry_45
+    21300092: coin_raspberry_46
+    21300094: coin_raspberry_47
+    21300096: coin_raspberry_48
+    21300098: coin_raspberry_49
+    21300100: coin_raspberry_50
+    21300102: coin_raspberry_51
+    21300104: coin_raspberry_52
+    21300106: coin_raspberry_53
+    21300108: coin_raspberry_54
+    21300110: coin_raspberry_55
+    21300112: coin_raspberry_56
+    21300114: coin_raspberry_57
+    21300116: coin_raspberry_58
+    21300118: coin_raspberry_59
+    21300120: coin_raspberry_60
+    21300122: coin_raspberry_61
+    21300124: coin_raspberry_62
+    21300126: coin_raspberry_63
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 30
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: coin_raspberry_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 32}
+        - {x: -8, y: 28}
+        - {x: -8, y: -31}
+        - {x: -6, y: -32}
+        - {x: 9, y: -32}
+        - {x: 9, y: 31}
+        - {x: 5, y: 32}
+    - name: coin_raspberry_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 32}
+        - {x: -6, y: 29}
+        - {x: -6, y: -30}
+        - {x: -4, y: -32}
+        - {x: 8, y: -32}
+        - {x: 11, y: -27}
+        - {x: 11, y: 24}
+        - {x: 6, y: 32}
+    - name: coin_raspberry_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 32}
+        - {x: -6, y: -32}
+        - {x: 12, y: -32}
+        - {x: 13, y: -23}
+        - {x: 13, y: 26}
+        - {x: 9, y: 32}
+    - name: coin_raspberry_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 32}
+        - {x: -7, y: 27}
+        - {x: -7, y: -32}
+        - {x: 12, y: -32}
+        - {x: 15, y: -29}
+        - {x: 15, y: 32}
+    - name: coin_raspberry_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 32}
+        - {x: -8, y: 30}
+        - {x: -8, y: -23}
+        - {x: -5, y: -32}
+        - {x: 12, y: -32}
+        - {x: 17, y: -30}
+        - {x: 17, y: 21}
+        - {x: 12, y: 32}
+    - name: coin_raspberry_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 32}
+        - {x: -9, y: 28}
+        - {x: -9, y: -32}
+        - {x: 12, y: -32}
+        - {x: 17, y: -30}
+        - {x: 19, y: -26}
+        - {x: 19, y: 22}
+        - {x: 17, y: 32}
+    - name: coin_raspberry_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 32}
+        - {x: -10, y: -24}
+        - {x: -7, y: -32}
+        - {x: 15, y: -32}
+        - {x: 19, y: -29}
+        - {x: 21, y: -23}
+        - {x: 21, y: 27}
+        - {x: 11, y: 32}
+    - name: coin_raspberry_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 32}
+        - {x: -11, y: 23}
+        - {x: -11, y: -26}
+        - {x: -7, y: -32}
+        - {x: 23, y: -32}
+        - {x: 23, y: 32}
+    - name: coin_raspberry_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 32}
+        - {x: -11, y: 20}
+        - {x: -11, y: -32}
+        - {x: 24, y: -32}
+        - {x: 24, y: 32}
+    - name: coin_raspberry_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 32}
+        - {x: -12, y: 32}
+        - {x: -12, y: -32}
+        - {x: 20, y: -32}
+        - {x: 26, y: -20}
+        - {x: 26, y: 26}
+    - name: coin_raspberry_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 32}
+        - {x: -13, y: 30}
+        - {x: -13, y: -32}
+        - {x: 27, y: -32}
+        - {x: 27, y: 28}
+        - {x: 22, y: 32}
+    - name: coin_raspberry_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 32}
+        - {x: -5, y: 32}
+        - {x: -14, y: 20}
+        - {x: -14, y: -31}
+        - {x: -9, y: -32}
+        - {x: 23, y: -32}
+        - {x: 28, y: -30}
+        - {x: 28, y: 22}
+    - name: coin_raspberry_12
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: -32}
+        - {x: 19, y: -32}
+        - {x: 29, y: -24}
+        - {x: 29, y: 32}
+        - {x: -8, y: 32}
+        - {x: -15, y: 30}
+        - {x: -15, y: -22}
+    - name: coin_raspberry_13
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 32}
+        - {x: -16, y: 28}
+        - {x: -16, y: -21}
+        - {x: -12, y: -32}
+        - {x: 20, y: -32}
+        - {x: 30, y: -20}
+        - {x: 30, y: 20}
+        - {x: 16, y: 32}
+    - name: coin_raspberry_14
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 28}
+        - {x: 11, y: 32}
+        - {x: -6, y: 32}
+        - {x: -16, y: 23}
+        - {x: -17, y: 15}
+        - {x: -17, y: -19}
+        - {x: -9, y: -32}
+        - {x: 22, y: -32}
+        - {x: 31, y: -13}
+        - {x: 31, y: 14}
+    - name: coin_raspberry_15
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 31}
+        - {x: -18, y: 25}
+        - {x: -18, y: -29}
+        - {x: -12, y: -32}
+        - {x: 14, y: -32}
+        - {x: 31, y: -25}
+        - {x: 31, y: 29}
+        - {x: 24, y: 31}
+    - name: coin_raspberry_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 31}
+        - {x: -18, y: 16}
+        - {x: -18, y: -16}
+        - {x: -17, y: -21}
+        - {x: -4, y: -32}
+        - {x: 18, y: -32}
+        - {x: 21, y: -31}
+        - {x: 32, y: -19}
+        - {x: 32, y: 16}
+        - {x: 26, y: 31}
+    - name: coin_raspberry_17
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 31}
+        - {x: -19, y: 20}
+        - {x: -19, y: -18}
+        - {x: -14, y: -32}
+        - {x: 19, y: -32}
+        - {x: 32, y: -18}
+        - {x: 32, y: 16}
+        - {x: 27, y: 31}
+    - name: coin_raspberry_18
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 31}
+        - {x: -18, y: 23}
+        - {x: -20, y: 18}
+        - {x: -20, y: -22}
+        - {x: -6, y: -32}
+        - {x: 20, y: -32}
+        - {x: 32, y: -20}
+        - {x: 32, y: 20}
+        - {x: 21, y: 31}
+    - name: coin_raspberry_19
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: 31}
+        - {x: -12, y: 31}
+        - {x: -17, y: 24}
+        - {x: -21, y: 8}
+        - {x: -21, y: -25}
+        - {x: -5, y: -32}
+        - {x: 22, y: -32}
+        - {x: 27, y: -27}
+        - {x: 32, y: -20}
+        - {x: 32, y: 22}
+    - name: coin_raspberry_20
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 31}
+        - {x: -7, y: 31}
+        - {x: -22, y: 25}
+        - {x: -22, y: -19}
+        - {x: -11, y: -31}
+        - {x: 15, y: -31}
+        - {x: 32, y: -24}
+        - {x: 32, y: 14}
+        - {x: 31, y: 18}
+    - name: coin_raspberry_21
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: -21}
+        - {x: -13, y: -31}
+        - {x: 19, y: -31}
+        - {x: 32, y: -24}
+        - {x: 32, y: 25}
+        - {x: 30, y: 31}
+        - {x: -10, y: 31}
+        - {x: -22, y: 16}
+    - name: coin_raspberry_22
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 31}
+        - {x: -21, y: 21}
+        - {x: -23, y: 11}
+        - {x: -23, y: -20}
+        - {x: -15, y: -30}
+        - {x: -9, y: -31}
+        - {x: 21, y: -31}
+        - {x: 32, y: -24}
+        - {x: 32, y: 27}
+        - {x: 19, y: 31}
+    - name: coin_raspberry_23
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 30}
+        - {x: -24, y: 23}
+        - {x: -24, y: -23}
+        - {x: -11, y: -31}
+        - {x: 26, y: -31}
+        - {x: 32, y: -23}
+        - {x: 32, y: 26}
+        - {x: 28, y: 30}
+    - name: coin_raspberry_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 30}
+        - {x: -25, y: 14}
+        - {x: -25, y: -16}
+        - {x: -8, y: -31}
+        - {x: 18, y: -31}
+        - {x: 32, y: -17}
+        - {x: 32, y: 18}
+        - {x: 21, y: 30}
+    - name: coin_raspberry_25
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 30}
+        - {x: -26, y: 13}
+        - {x: -26, y: -21}
+        - {x: -16, y: -31}
+        - {x: 27, y: -31}
+        - {x: 32, y: -19}
+        - {x: 32, y: 23}
+        - {x: 20, y: 30}
+    - name: coin_raspberry_26
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 30}
+        - {x: -26, y: 23}
+        - {x: -26, y: -22}
+        - {x: -15, y: -29}
+        - {x: -10, y: -31}
+        - {x: 25, y: -31}
+        - {x: 32, y: -20}
+        - {x: 32, y: 25}
+        - {x: 18, y: 30}
+    - name: coin_raspberry_27
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 30}
+        - {x: -27, y: 26}
+        - {x: -27, y: -19}
+        - {x: -20, y: -31}
+        - {x: 27, y: -31}
+        - {x: 32, y: -18}
+        - {x: 32, y: 22}
+        - {x: 25, y: 30}
+    - name: coin_raspberry_28
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 30}
+        - {x: -28, y: 20}
+        - {x: -28, y: -16}
+        - {x: -26, y: -20}
+        - {x: -20, y: -31}
+        - {x: 19, y: -31}
+        - {x: 32, y: -24}
+        - {x: 32, y: 18}
+        - {x: 22, y: 30}
+    - name: coin_raspberry_29
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 30}
+        - {x: -28, y: 19}
+        - {x: -28, y: -19}
+        - {x: -14, y: -31}
+        - {x: 26, y: -31}
+        - {x: 32, y: -18}
+        - {x: 32, y: 25}
+        - {x: 24, y: 30}
+    - name: coin_raspberry_30
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 30}
+        - {x: -29, y: 18}
+        - {x: -29, y: -13}
+        - {x: -28, y: -20}
+        - {x: -15, y: -31}
+        - {x: 31, y: -31}
+        - {x: 31, y: 28}
+        - {x: 27, y: 30}
+    - name: coin_raspberry_31
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 30}
+        - {x: -29, y: 25}
+        - {x: -29, y: -22}
+        - {x: -12, y: -31}
+        - {x: 19, y: -31}
+        - {x: 31, y: -21}
+        - {x: 31, y: 15}
+        - {x: 22, y: 30}
+    - name: coin_raspberry_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 30}
+        - {x: -30, y: 29}
+        - {x: -30, y: -27}
+        - {x: -15, y: -31}
+        - {x: 23, y: -31}
+        - {x: 31, y: -21}
+        - {x: 31, y: 21}
+        - {x: 29, y: 30}
+    - name: coin_raspberry_33
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 30}
+        - {x: -31, y: 16}
+        - {x: -31, y: -24}
+        - {x: -21, y: -31}
+        - {x: 13, y: -31}
+        - {x: 19, y: -29}
+        - {x: 30, y: -16}
+        - {x: 30, y: 12}
+        - {x: 23, y: 30}
+    - name: coin_raspberry_34
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 30}
+        - {x: -13, y: 30}
+        - {x: -20, y: 24}
+        - {x: -31, y: 13}
+        - {x: -31, y: -12}
+        - {x: -26, y: -27}
+        - {x: -12, y: -31}
+        - {x: 10, y: -31}
+        - {x: 28, y: -21}
+        - {x: 29, y: -20}
+        - {x: 29, y: 16}
+    - name: coin_raspberry_35
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 30}
+        - {x: -17, y: 29}
+        - {x: -31, y: 23}
+        - {x: -31, y: -30}
+        - {x: -25, y: -31}
+        - {x: 18, y: -31}
+        - {x: 29, y: -16}
+        - {x: 29, y: 14}
+        - {x: 13, y: 30}
+    - name: coin_raspberry_36
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 29}
+        - {x: 9, y: 30}
+        - {x: -17, y: 30}
+        - {x: -32, y: 16}
+        - {x: -32, y: -22}
+        - {x: -14, y: -31}
+        - {x: 24, y: -31}
+        - {x: 28, y: -18}
+        - {x: 28, y: 16}
+    - name: coin_raspberry_37
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 30}
+        - {x: -32, y: 26}
+        - {x: -32, y: -26}
+        - {x: -17, y: -31}
+        - {x: 18, y: -31}
+        - {x: 27, y: -22}
+        - {x: 27, y: 16}
+        - {x: 21, y: 30}
+    - name: coin_raspberry_38
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 30}
+        - {x: -32, y: 24}
+        - {x: -32, y: -27}
+        - {x: -17, y: -31}
+        - {x: 17, y: -31}
+        - {x: 27, y: -17}
+        - {x: 27, y: 24}
+        - {x: 9, y: 30}
+    - name: coin_raspberry_39
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 30}
+        - {x: -32, y: 28}
+        - {x: -32, y: -25}
+        - {x: -30, y: -31}
+        - {x: 9, y: -31}
+        - {x: 26, y: -26}
+        - {x: 26, y: 22}
+        - {x: 19, y: 30}
+    - name: coin_raspberry_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 30}
+        - {x: -32, y: 22}
+        - {x: -32, y: -20}
+        - {x: -30, y: -24}
+        - {x: -23, y: -31}
+        - {x: 14, y: -31}
+        - {x: 25, y: -26}
+        - {x: 25, y: 25}
+        - {x: 20, y: 30}
+    - name: coin_raspberry_41
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 29}
+        - {x: 9, y: 30}
+        - {x: -18, y: 30}
+        - {x: -32, y: 16}
+        - {x: -32, y: -14}
+        - {x: -23, y: -30}
+        - {x: -15, y: -31}
+        - {x: 19, y: -31}
+        - {x: 24, y: -16}
+        - {x: 24, y: 18}
+    - name: coin_raspberry_42
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 31}
+        - {x: -32, y: 20}
+        - {x: -32, y: -25}
+        - {x: -24, y: -31}
+        - {x: 12, y: -31}
+        - {x: 24, y: -19}
+        - {x: 24, y: 15}
+        - {x: 14, y: 31}
+    - name: coin_raspberry_43
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9, y: 31}
+        - {x: -19, y: 31}
+        - {x: -32, y: 24}
+        - {x: -32, y: -19}
+        - {x: -15, y: -31}
+        - {x: 4, y: -31}
+        - {x: 14, y: -30}
+        - {x: 23, y: -15}
+        - {x: 23, y: 10}
+        - {x: 20, y: 22}
+    - name: coin_raspberry_44
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: -19}
+        - {x: -25, y: -31}
+        - {x: 9, y: -31}
+        - {x: 22, y: -23}
+        - {x: 22, y: 18}
+        - {x: 19, y: 25}
+        - {x: 8, y: 31}
+        - {x: -17, y: 31}
+        - {x: -32, y: 15}
+    - name: coin_raspberry_45
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 31}
+        - {x: -17, y: 31}
+        - {x: -32, y: 25}
+        - {x: -32, y: -25}
+        - {x: -15, y: -31}
+        - {x: -7, y: -32}
+        - {x: 5, y: -32}
+        - {x: 21, y: -25}
+        - {x: 21, y: 23}
+        - {x: 6, y: 30}
+    - name: coin_raspberry_46
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 31}
+        - {x: -32, y: 18}
+        - {x: -32, y: -26}
+        - {x: -18, y: -32}
+        - {x: 13, y: -32}
+        - {x: 20, y: -19}
+        - {x: 20, y: 21}
+        - {x: 7, y: 31}
+    - name: coin_raspberry_47
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 31}
+        - {x: -32, y: 16}
+        - {x: -32, y: -25}
+        - {x: -26, y: -32}
+        - {x: 13, y: -32}
+        - {x: 20, y: -15}
+        - {x: 20, y: 26}
+        - {x: 12, y: 31}
+    - name: coin_raspberry_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 31}
+        - {x: -16, y: 31}
+        - {x: -28, y: 20}
+        - {x: -30, y: 12}
+        - {x: -32, y: 0}
+        - {x: -32, y: -10}
+        - {x: -22, y: -30}
+        - {x: -16, y: -32}
+        - {x: 8, y: -32}
+        - {x: 19, y: -16}
+        - {x: 19, y: 20}
+        - {x: 17, y: 27}
+    - name: coin_raspberry_49
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: -32}
+        - {x: 7, y: -32}
+        - {x: 18, y: -23}
+        - {x: 18, y: 24}
+        - {x: 16, y: 31}
+        - {x: -16, y: 31}
+        - {x: -31, y: 25}
+        - {x: -31, y: -23}
+    - name: coin_raspberry_50
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 32}
+        - {x: -28, y: 23}
+        - {x: -30, y: 12}
+        - {x: -30, y: -20}
+        - {x: -21, y: -32}
+        - {x: 15, y: -32}
+        - {x: 17, y: -27}
+        - {x: 17, y: 29}
+        - {x: 7, y: 32}
+    - name: coin_raspberry_51
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5, y: 32}
+        - {x: -19, y: 32}
+        - {x: -26, y: 25}
+        - {x: -30, y: 7}
+        - {x: -30, y: -25}
+        - {x: -14, y: -32}
+        - {x: 9, y: -32}
+        - {x: 16, y: -26}
+        - {x: 16, y: 22}
+    - name: coin_raspberry_52
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 32}
+        - {x: -17, y: 31}
+        - {x: -28, y: 15}
+        - {x: -29, y: 12}
+        - {x: -29, y: -23}
+        - {x: -13, y: -32}
+        - {x: 1, y: -32}
+        - {x: 7, y: -27}
+        - {x: 15, y: -18}
+        - {x: 15, y: 20}
+        - {x: 4, y: 32}
+    - name: coin_raspberry_53
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 32}
+        - {x: -17, y: 31}
+        - {x: -28, y: 22}
+        - {x: -28, y: -17}
+        - {x: -24, y: -32}
+        - {x: 9, y: -32}
+        - {x: 14, y: -30}
+        - {x: 14, y: 26}
+        - {x: 3, y: 32}
+    - name: coin_raspberry_54
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 32}
+        - {x: -27, y: 19}
+        - {x: -27, y: -19}
+        - {x: -14, y: -32}
+        - {x: 14, y: -32}
+        - {x: 14, y: 24}
+        - {x: 8, y: 32}
+    - name: coin_raspberry_55
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 32}
+        - {x: -25, y: 16}
+        - {x: -25, y: -27}
+        - {x: -19, y: -32}
+        - {x: 7, y: -32}
+        - {x: 13, y: -24}
+        - {x: 13, y: 20}
+        - {x: 8, y: 32}
+    - name: coin_raspberry_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 32}
+        - {x: -24, y: 20}
+        - {x: -24, y: -19}
+        - {x: -15, y: -32}
+        - {x: 12, y: -32}
+        - {x: 12, y: 28}
+        - {x: 5, y: 32}
+    - name: coin_raspberry_57
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: -28}
+        - {x: -18, y: -32}
+        - {x: 7, y: -32}
+        - {x: 11, y: -27}
+        - {x: 11, y: 30}
+        - {x: 10, y: 32}
+        - {x: -16, y: 32}
+        - {x: -22, y: 29}
+        - {x: -22, y: -20}
+    - name: coin_raspberry_58
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 32}
+        - {x: -21, y: 29}
+        - {x: -21, y: -32}
+        - {x: 10, y: -32}
+        - {x: 10, y: 23}
+        - {x: 7, y: 32}
+    - name: coin_raspberry_59
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 32}
+        - {x: -18, y: 30}
+        - {x: -19, y: 24}
+        - {x: -19, y: -24}
+        - {x: -13, y: -32}
+        - {x: 5, y: -32}
+        - {x: 8, y: -30}
+        - {x: 9, y: -29}
+        - {x: 9, y: 32}
+    - name: coin_raspberry_60
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 32}
+        - {x: -17, y: 23}
+        - {x: -17, y: -28}
+        - {x: -14, y: -32}
+        - {x: 6, y: -32}
+        - {x: 9, y: -23}
+        - {x: 9, y: 27}
+        - {x: 8, y: 32}
+    - name: coin_raspberry_61
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 32}
+        - {x: -15, y: 31}
+        - {x: -15, y: -22}
+        - {x: -12, y: -29}
+        - {x: -9, y: -32}
+        - {x: 7, y: -32}
+        - {x: 8, y: -26}
+        - {x: 8, y: 23}
+        - {x: 5, y: 32}
+    - name: coin_raspberry_62
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 32}
+        - {x: -11, y: 31}
+        - {x: -13, y: 19}
+        - {x: -13, y: -13}
+        - {x: -10, y: -29}
+        - {x: -7, y: -32}
+        - {x: 5, y: -32}
+        - {x: 7, y: -31}
+        - {x: 7, y: 30}
+        - {x: 5, y: 32}
+    - name: coin_raspberry_63
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 32}
+        - {x: -10, y: 27}
+        - {x: -10, y: -32}
+        - {x: 7, y: -32}
+        - {x: 7, y: 32}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

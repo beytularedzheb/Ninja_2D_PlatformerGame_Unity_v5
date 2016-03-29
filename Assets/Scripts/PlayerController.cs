@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour, ICharacter2D
     [SerializeField]
     private Vector2 speed;
 
+    private Vector2 inputVelocity;
+
     private bool facingRight = true;
     public bool grounded = false;
     private bool jump = false;
@@ -86,9 +88,10 @@ public class PlayerController : MonoBehaviour, ICharacter2D
         offset = new Vector3(boxCollider.offset.x, -(boxCollider.size.y / 2 - boxCollider.offset.y), 0);
         boxCastSize = new Vector2(boxCollider.size.x - 0.05f, 0.001f);
     }
-
+    
     private void Update()
     {
+        inputVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         // Gizmos.DrawCube(transform.position + offset, boxCastSize);
         grounded = Physics2D.BoxCast(transform.position + offset, boxCastSize, 0, Vector2.down, 0.1f, whatIsGround);
 
@@ -117,16 +120,14 @@ public class PlayerController : MonoBehaviour, ICharacter2D
     }
     
     private void FixedUpdate()
-    {
-        Vector2 velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
+    {			
         if (!isSliding)
         {
-            anim.SetFloat("speed", Mathf.Abs(velocity.x));
+            anim.SetFloat("speed", Mathf.Abs(inputVelocity.x));
 
             if (isThrowingInAir || (!isMeleeAttacking && !isThrowingOnGround))
             {
-                Move(velocity);
+                Move(inputVelocity);
                 Jump();
             }
 
@@ -144,6 +145,10 @@ public class PlayerController : MonoBehaviour, ICharacter2D
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpVelocity);
             // Make sure the player can't jump again until the jump conditions from Update are satisfied.
             jump = false;
+        }
+        else if (rigidBody.velocity.y < 0 && !anim.GetBool("land"))
+        {
+            anim.SetBool("land", true);
         }
     }
 
