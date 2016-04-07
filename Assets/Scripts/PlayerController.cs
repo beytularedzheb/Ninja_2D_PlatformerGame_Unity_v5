@@ -1,10 +1,18 @@
 ﻿using UnityEngine;
 
+/* to inform the enemy that the player is dead and there 
+   is no need attacking him anymore */
+public delegate void DeadEventHandler();
+
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
 public class PlayerController : MonoBehaviour, ICharacter2D
 {
     #region Fields
+
+    public event DeadEventHandler Dead;
+
+    public int health;
 
     public Transform DefaultParent { get; private set; }
 
@@ -225,6 +233,29 @@ public class PlayerController : MonoBehaviour, ICharacter2D
         else
         {
             anim.SetLayerWeight(1, 0);
+        }
+    }
+
+    public bool IsDead
+    {
+        get
+        {
+            if (health <= 0)
+            {
+                OnDead();
+            }
+
+            return health <= 0;
+        }
+    }
+
+    public void OnDead()
+    {
+        // if there is any instance
+        if (Dead != null)
+        {
+            // then execute it
+            Dead();
         }
     }
 }

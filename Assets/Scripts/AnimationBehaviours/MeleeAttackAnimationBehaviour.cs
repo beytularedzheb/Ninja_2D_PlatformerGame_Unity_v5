@@ -7,12 +7,20 @@ public class MeleeAttackAnimationBehaviour : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        instance = PlayerController.GetInstance;
-
-        instance.isMeleeAttacking = true;
-        if (instance.grounded)
+        if (animator.gameObject.CompareTag("Player"))
         {
-            PlayerController.GetInstance.rigidBody.velocity = Vector2.zero;
+            instance = PlayerController.GetInstance;
+
+            instance.isMeleeAttacking = true;
+            if (instance.grounded)
+            {
+                instance.rigidBody.velocity = Vector2.zero;
+            }
+        }
+        else if (animator.gameObject.CompareTag("Enemy"))
+        {
+            animator.GetComponent<Character>().Attack = true;
+            animator.SetFloat("speed", 0);
         }
     }
 
@@ -27,6 +35,11 @@ public class MeleeAttackAnimationBehaviour : StateMachineBehaviour
         if (animator.gameObject.CompareTag("Player"))
         {
             instance.isMeleeAttacking = false;
+        }
+        else if (animator.gameObject.CompareTag("Enemy"))
+        {
+            animator.GetComponent<Character>().Attack = false;
+            animator.ResetTrigger("attack");
         }
     }
 
