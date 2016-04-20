@@ -11,10 +11,16 @@ public class MeleeAttackAnimationBehaviour : StateMachineBehaviour
         {
             instance = PlayerController.GetInstance;
 
-            instance.isMeleeAttacking = true;
+            instance.isAttacking = true;
+
             if (instance.grounded)
             {
                 instance.rigidBody.velocity = Vector2.zero;
+                instance.isAttackingInAir = false;
+            }
+            else
+            {
+                instance.isAttackingInAir = true;
             }
         }
         else if (animator.gameObject.CompareTag("Enemy"))
@@ -25,16 +31,22 @@ public class MeleeAttackAnimationBehaviour : StateMachineBehaviour
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-    //
-    //}
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        if (animator.CompareTag("Player") && instance.isAttackingInAir && instance.grounded)
+        {
+            instance.rigidBody.velocity = Vector2.zero;
+            instance.isAttackingInAir = false;
+        }
+    }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (animator.gameObject.CompareTag("Player"))
         {
-            instance.isMeleeAttacking = false;
+            instance.isAttacking = false;
+            instance.isAttackingInAir = false;
         }
         else if (animator.gameObject.CompareTag("Enemy"))
         {

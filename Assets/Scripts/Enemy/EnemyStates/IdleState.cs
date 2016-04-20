@@ -27,7 +27,7 @@ public class IdleState : EnemyState
 
     public override void OnTriggerEnter(Collider2D other)
     {
-        if (other.tag.Equals("Knife"))
+        if (enemy.DamageSources.Contains(other.tag))
         {
             enemy.Target = PlayerController.GetInstance.gameObject;
         }

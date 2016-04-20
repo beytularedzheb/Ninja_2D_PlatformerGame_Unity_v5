@@ -80,7 +80,6 @@
     <Compile Include="Assets\Scripts\Door.cs" />
     <Compile Include="Assets\Scripts\Enemy\Character.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnemySight.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStates\EnemyState.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStates\IdleState.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStates\MeleeState.cs" />

@@ -14,7 +14,7 @@ public class RangedState : EnemyState
 
     public override void Execute()
     {
-        ThrowKnife();
+        // ThrowKnife();
 
         if (enemy.InMeleeRange)
         {

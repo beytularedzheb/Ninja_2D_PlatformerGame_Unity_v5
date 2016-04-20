@@ -3,9 +3,7 @@
 public class Ladder : MonoBehaviour
 {
     [SerializeField]
-    private GameObject upperPlatform;
-    private BoxCollider2D[] boxColliderArr;
-    private BoxCollider2D enabledCollider;
+    private PlatformEffector2D upperPlatform;
 
     private float gravityScale;
 
@@ -15,11 +13,7 @@ public class Ladder : MonoBehaviour
     {
         if (null == upperPlatform)
         {
-            Debug.LogException(new System.NullReferenceException("\"upperPlatform\" is not assigned!"));
-        }
-        else
-        {
-            boxColliderArr = upperPlatform.GetComponents<BoxCollider2D>();
+            Debug.LogException(new System.NullReferenceException("\"platformEffectorUpperPlatform\" is not assigned!"));
         }
 
         player = PlayerController.GetInstance;
@@ -29,18 +23,8 @@ public class Ladder : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            foreach (var boxCollider in boxColliderArr)
-            {
-                if (boxCollider.enabled)
-                {
-                    enabledCollider = boxCollider;
-                    boxCollider.isTrigger = true;
-                }
-                else
-                {
-                    boxCollider.enabled = true;
-                }
-            }
+            // remove Player from colliderMask
+            upperPlatform.colliderMask &= ~(1 << LayerMask.NameToLayer("Player"));
 
             player.canClimb = true;
             gravityScale = player.rigidBody.gravityScale;
@@ -52,17 +36,8 @@ public class Ladder : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            foreach (var boxCollider in boxColliderArr)
-            {
-                if (enabledCollider == boxCollider)
-                {
-                    boxCollider.isTrigger = false;
-                }
-                else
-                {
-                    boxCollider.enabled = false;
-                }
-            }
+            // add Player from colliderMask
+            upperPlatform.colliderMask |= (1 << LayerMask.NameToLayer("Player"));
 
             player.canClimb = false;
             player.rigidBody.gravityScale = gravityScale;

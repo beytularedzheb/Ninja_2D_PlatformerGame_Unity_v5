@@ -35,6 +35,14 @@ public abstract class Character : MonoBehaviour
         }
     }
 
+    public List<string> DamageSources
+    {
+        get
+        {
+            return damageSources;
+        }
+    }
+
     public abstract IEnumerator TakeDamage();
 
     public virtual void Start()
@@ -43,10 +51,7 @@ public abstract class Character : MonoBehaviour
         CharacterAnimator = GetComponent<Animator>();
     }
 
-    void Update()
-    {
-
-    }
+    public abstract void Update();
 
     public void ChangeDirection()
     {
@@ -56,7 +61,7 @@ public abstract class Character : MonoBehaviour
 
     public virtual void OnTriggerEnter2D(Collider2D other)
     {
-        if (damageSources.Contains(other.tag))
+        if (DamageSources.Contains(other.tag))
         {
             // see more about coroutines: http://docs.unity3d.com/Manual/Coroutines.html
             StartCoroutine(TakeDamage());

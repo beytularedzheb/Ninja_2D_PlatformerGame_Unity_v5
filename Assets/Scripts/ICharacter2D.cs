@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public interface ICharacter2D
 {
@@ -8,7 +9,7 @@ public interface ICharacter2D
 
     void ChangeDirection();
 
-    //void TakeDamage();
+    IEnumerator TakeDamage();
 
     //void Die();*/
 }

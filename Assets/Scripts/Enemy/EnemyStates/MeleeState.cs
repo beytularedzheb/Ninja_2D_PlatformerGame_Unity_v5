@@ -15,7 +15,7 @@ public class MeleeState : EnemyState
     public override void Execute()
     {
         Attack();
-        if (enemy.Target == null || !enemy.InMeleeRange)
+        if (!enemy.InMeleeRange)
         {
             enemy.ChangeState(new PatrolState());
         }

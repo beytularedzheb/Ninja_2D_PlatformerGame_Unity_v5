@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 public class Enemy : Character
 {
@@ -12,8 +12,16 @@ public class Enemy : Character
     [SerializeField]
     private Transform rightEdge;
 
+    [SerializeField]
+    private float howFarCanSeeAhead;
+
+    [SerializeField]
+    private float howFarCanSeeBehind;
+
     private Vector2 startPosition;
     private EnemyState currentState;
+    private bool ignoreTarget;
+
     public GameObject Target { get; set; }
 
     public bool InMeleeRange
@@ -39,6 +47,7 @@ public class Enemy : Character
     public override void Start()
     {
         base.Start();
+        ignoreTarget = false;
         facingRight = false;
         CharacterAnimator.SetTrigger("appear");
         PlayerController.GetInstance.Dead += new DeadEventHandler(RemoveTarget);
@@ -47,17 +56,47 @@ public class Enemy : Character
         startPosition = transform.position;
     }
 
-    void Update()
+    public override void Update()
     {
         if (!IsDead)
         {
-            if (!TakingDamage)
-            {
-                currentState.Execute();
-            }
+            Target = CanSeeTarget();
+
+            currentState.Execute();
 
             LookAtTarget();
         }
+    }
+
+    public GameObject CanSeeTarget()
+    {
+        Vector2 direction = GetDirection();
+
+        RaycastHit2D hitPlayerAhead = Physics2D.Raycast(
+            transform.position,
+            direction, howFarCanSeeAhead,
+            1 << LayerMask.NameToLayer("Player"));
+
+        if (!ignoreTarget)
+        {
+            if (hitPlayerAhead)
+            {
+                return hitPlayerAhead.transform.gameObject;
+            }
+            else
+            {
+                RaycastHit2D hitPlayerBehind = Physics2D.Raycast(
+                    transform.position,
+                    direction * -1, howFarCanSeeBehind,
+                    1 << LayerMask.NameToLayer("Player"));
+
+                if (hitPlayerBehind)
+                {
+                    return hitPlayerBehind.transform.gameObject;
+                }
+            }
+        }
+        return null;
     }
 
     public void ChangeState(EnemyState newState)
@@ -73,17 +112,18 @@ public class Enemy : Character
 
     public void Move()
     {
-        if (!Attack)
+        if (!Attack && !TakingDamage)
         {
             // to fix falling down of enemy from platform
-            if ((GetDirection().x > 0 && transform.position.x < rightEdge.position.x) ||
-                (GetDirection().x < 0 && transform.position.x > leftEdge.position.x))
+            Vector2 direction = GetDirection();
+            if ((direction.x > 0 && transform.position.x < rightEdge.position.x) ||
+                (direction.x < 0 && transform.position.x > leftEdge.position.x))
             {
                 CharacterAnimator.SetFloat("speed", 1);
 
                 /* multiply by Time.deltaTime because we want enemy to move
                    with the same speed on different devices (it depends on the FPS rate) */
-                transform.Translate(GetDirection() * (movementSpeed * Time.deltaTime));
+                transform.Translate(direction * (movementSpeed * Time.deltaTime));
             }
             else if (currentState is PatrolState)
             {
@@ -112,6 +152,7 @@ public class Enemy : Character
 
     public void RemoveTarget()
     {
+        ignoreTarget = true;
         Target = null;
         ChangeState(new PatrolState());
     }
@@ -128,7 +169,7 @@ public class Enemy : Character
         health -= 10;
 
         if (!IsDead)
-        {
+        {            
             CharacterAnimator.SetTrigger("damage");
         }
         else

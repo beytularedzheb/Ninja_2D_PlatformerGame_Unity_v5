@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 /* to inform the enemy that the player is dead and there 
    is no need attacking him anymore */
@@ -49,11 +50,9 @@ public class PlayerController : MonoBehaviour, ICharacter2D
     [HideInInspector]
     public bool canClimb = false;
     [HideInInspector]
-    public bool isMeleeAttacking = false;
+    public bool isAttacking = false;
     [HideInInspector]
-    public bool isThrowingOnGround = false;
-    [HideInInspector]
-    public bool isThrowingInAir = false;
+    public bool isAttackingInAir = false;
 
     private float velocityXSmoothing;
     private float accelerationTimeAirborne = 0.005f;
@@ -61,6 +60,8 @@ public class PlayerController : MonoBehaviour, ICharacter2D
 
     private Vector3 offset;
     private Vector2 boxCastSize;
+
+    private Vector3 startPosition;
 
     // Singleton
     private static PlayerController instance;
@@ -81,6 +82,7 @@ public class PlayerController : MonoBehaviour, ICharacter2D
 
     private void Start()
     {
+        startPosition = transform.position;
         DefaultParent = transform.parent;
 
         boxCollider = GetComponent<BoxCollider2D>();
@@ -99,41 +101,44 @@ public class PlayerController : MonoBehaviour, ICharacter2D
     
     private void Update()
     {
-        inputVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        // Gizmos.DrawCube(transform.position + offset, boxCastSize);
-        grounded = Physics2D.BoxCast(transform.position + offset, boxCastSize, 0, Vector2.down, 0.1f, whatIsGround);
+        if (!IsDead)
+        {
+            inputVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            // Gizmos.DrawCube(transform.position + offset, boxCastSize);
+            grounded = Physics2D.BoxCast(transform.position + offset, boxCastSize, 0, Vector2.down, 0.1f, whatIsGround);
 
-        // If the jump button is pressed and the player is grounded then the player should jump.
-        if (Input.GetButtonDown("Jump") && grounded)
-        {
-            jump = true;
-        }
-        if (!canClimb) // !anim.GetCurrentAnimatorStateInfo(0).IsName("Climb")
-        {
-            if (Input.GetButtonDown("Fire1") && !isMeleeAttacking)
+            // If the jump button is pressed and the player is grounded then the player should jump.
+            if (Input.GetButtonDown("Jump") && grounded)
             {
-                anim.SetTrigger("attack");
+                jump = true;
             }
-            if (Input.GetButtonDown("Fire2") && !isThrowingOnGround && !isThrowingInAir)
+            if (!canClimb || (canClimb && grounded))
             {
-                anim.SetTrigger("throw");
-            }
-            if (Input.GetKeyDown(KeyCode.DownArrow) &&
-                grounded &&
-                anim.GetCurrentAnimatorStateInfo(0).IsTag("Run"))
-            {
-                anim.SetTrigger("slide");
+                if (Input.GetKeyDown(KeyCode.DownArrow) &&
+                    grounded &&
+                    anim.GetCurrentAnimatorStateInfo(0).IsTag("Run"))
+                {
+                    anim.SetTrigger("slide");
+                }
+                if (Input.GetButtonDown("Fire1") && !isAttacking)
+                {
+                    anim.SetTrigger("attack");
+                }
+                if (Input.GetButtonDown("Fire2") && !isAttacking)
+                {
+                    anim.SetTrigger("throw");
+                }
             }
         }
     }
-    
+
     private void FixedUpdate()
-    {			
-        if (!isSliding)
+    {
+        if (!IsDead || !isSliding)
         {
             anim.SetFloat("speed", Mathf.Abs(inputVelocity.x));
 
-            if (isThrowingInAir || (!isMeleeAttacking && !isThrowingOnGround))
+            if (!isAttacking || isAttackingInAir)
             {
                 Move(inputVelocity);
                 Jump();
@@ -181,7 +186,7 @@ public class PlayerController : MonoBehaviour, ICharacter2D
         }
         else
         {
-            if (!isThrowingInAir)
+            if (!isAttackingInAir)
             {
                 Flip(velocity);
             }
@@ -254,8 +259,32 @@ public class PlayerController : MonoBehaviour, ICharacter2D
         // if there is any instance
         if (Dead != null)
         {
+            // transform.position = startPosition;
             // then execute it
             Dead();
+        }
+    }
+
+    public IEnumerator TakeDamage()
+    {
+        health -= 10;
+        if (!IsDead)
+        {
+            anim.SetTrigger("damage");
+        }
+        else
+        {
+            anim.SetTrigger("die");
+        }
+
+        yield return null;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("EnemyWeapon"))
+        {
+            StartCoroutine(TakeDamage());
         }
     }
 }

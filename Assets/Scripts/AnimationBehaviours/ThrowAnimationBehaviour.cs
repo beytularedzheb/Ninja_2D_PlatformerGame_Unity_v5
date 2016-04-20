@@ -10,33 +10,37 @@ public class ThrowAnimationBehaviour : StateMachineBehaviour
         if (animator.gameObject.CompareTag("Player"))
         {
             instance = PlayerController.GetInstance;
+            instance.isAttacking = true;
 
             if (instance.grounded)
             {
-                instance.isThrowingOnGround = true;
-                instance.isThrowingInAir = false;
+                instance.isAttackingInAir = false;
                 instance.rigidBody.velocity = Vector2.zero;
             }
             else
             {
-                instance.isThrowingOnGround = false;
-                instance.isThrowingInAir = true;
+                instance.isAttackingInAir = true;
             }
         }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-    //
-    //}
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        if (animator.CompareTag("Player") && instance.isAttackingInAir && instance.grounded)
+        {
+            instance.rigidBody.velocity = Vector2.zero;
+            instance.isAttackingInAir = false;
+        }
+    }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (animator.gameObject.CompareTag("Player"))
         {
-            instance.isThrowingOnGround = false;
-            instance.isThrowingInAir = false;
+            instance.isAttacking = false;
+            instance.isAttackingInAir = false;
         }
     }
 
